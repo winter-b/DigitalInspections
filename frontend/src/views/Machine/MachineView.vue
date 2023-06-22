@@ -101,7 +101,7 @@
     },
     async fetchMachineData() {
         const machineId = this.$route.params.id;
-        const response = await fetch("http://backend.localhost/Machine?machineId="+ machineId, {
+        const response = await fetch("http://backend.ogversion.com/Machine?machineId="+ machineId, {
             headers: {
             "accept": "text/plain",
             "token": localStorage.getItem("token")
@@ -125,7 +125,7 @@
         const limit = this.worksPerPage;
         console.log(limit);
         console.log(offset);
-        const response = await fetch(`http://backend.localhost/Machine/Works?machineId=${machineId}&limit=${limit}&offset=${offset}`, {
+        const response = await fetch(`http://backend.ogversion.com/Machine/Works?machineId=${machineId}&limit=${limit}&offset=${offset}`, {
             headers: {
             "accept": "text/plain",
             "token": localStorage.getItem("token")
@@ -158,7 +158,7 @@
         },
         deleteWork(workId) {
             if (confirm("Ar tikrai norite ištrinti darbą?")) {
-                fetch(`http://backend.localhost/Machine/Work?workId=${workId}`, {
+                fetch(`http://backend.ogversion.com/Machine/Work?workId=${workId}`, {
                     method: "DELETE",
                     headers: {
                         "accept": "text/plain",
@@ -205,7 +205,7 @@
         async setTotalCountOfWorks() {
         const machineId = this.$route.params.id;
 
-        var response = await fetch(`http://backend.localhost/Machine/Works?machineId=${machineId}&limit=100&offset=0`, {
+        var response = await fetch(`http://backend.ogversion.com/Machine/Works?machineId=${machineId}&limit=100&offset=0`, {
             headers: {
             "accept": "text/plain",
             "token": localStorage.getItem("token")

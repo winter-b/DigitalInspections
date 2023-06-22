@@ -47,7 +47,7 @@ export default {
     async fetchMachineData() {
       try {
         const machineId = this.$route.params.id;
-        const response = await fetch(`http://backend.localhost/Machine?machineId=${machineId}`, {
+        const response = await fetch(`http://backend.ogversion.com/Machine?machineId=${machineId}`, {
           headers: {
             accept: 'text/plain',
             token: localStorage.getItem('token')

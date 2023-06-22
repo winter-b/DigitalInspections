@@ -49,7 +49,7 @@ export default {
   methods: {
     async fetchMachines() {
       try {
-        const response = await fetch("http://backend.localhost/Machines?limit=10&offset=0", {
+        const response = await fetch("http://backend.ogversion.com/Machines?limit=10&offset=0", {
           headers: {
             "accept": "text/plain",
             "token": localStorage.getItem("token")
@@ -86,7 +86,7 @@ export default {
       this.$router.push(`/machine/edit/${machineId}`);
     },
     async deleteMachine(machineId) {
-      await fetch(`http://backend.localhost/Machine?machineId=${machineId}`, {
+      await fetch(`http://backend.ogversion.com/Machine?machineId=${machineId}`, {
         method: "DELETE",
         headers: {
           "accept": "text/plain",

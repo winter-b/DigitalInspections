@@ -45,7 +45,7 @@ export default {
     },
     async fetchWorkData() {
       const response = await fetch(
-        `http://backend.localhost/Machine/Work?workId=${this.$route.params.id}`,
+        `http://backend.ogversion.com/Machine/Work?workId=${this.$route.params.id}`,
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default {
     markAsInspected(workId) {
     var formData = new FormData();
     formData.append("isInspected", "true");
-    fetch(`http://backend.localhost/Machine/Work?workId=${workId}`, {
+    fetch(`http://backend.ogversion.com/Machine/Work?workId=${workId}`, {
       method: "PUT",
       headers: {
         "accept": "text/plain",
@@ -73,7 +73,7 @@ export default {
     markAsUnInspected(workId) {
     var formData = new FormData();
     formData.append("isInspected", "false");
-    fetch(`http://backend.localhost/Machine/Work?workId=${workId}`, {
+    fetch(`http://backend.ogversion.com/Machine/Work?workId=${workId}`, {
       method: "PUT",
       headers: {
         "accept": "text/plain",

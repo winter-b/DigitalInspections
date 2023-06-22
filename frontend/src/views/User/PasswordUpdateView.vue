@@ -64,7 +64,7 @@
         const form = new FormData();
         form.append('oldPassword', this.currentPassword);
         form.append('newPassword', this.newPassword);
-        const response = await fetch('http://backend/account/update', {
+        const response = await fetch('http://backend.ogversion.com/account/update', {
           method: 'POST',
           headers: {
             accept: '*/*',

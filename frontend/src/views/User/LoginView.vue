@@ -34,7 +34,7 @@
             form.append("username", this.formData.username);
             form.append("password", this.formData.password);
             console.log()
-            var response = fetch("http://backend.localhost/login", {
+            var response = fetch("http://backend.ogversion.com/login", {
             method: "POST",
             headers: {
                 "accept": "*/*"

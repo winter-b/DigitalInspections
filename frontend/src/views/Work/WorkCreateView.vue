@@ -45,7 +45,7 @@
         formData.append('description', this.description);
         formData.append('category', this.category);
 
-        fetch('http://backend.localhost/Machine/Work', {
+        fetch('http://backend.ogversion.com/Machine/Work', {
           method: 'POST',
           headers: {
             accept: 'text/plain',

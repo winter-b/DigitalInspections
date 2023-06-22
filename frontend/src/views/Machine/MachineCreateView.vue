@@ -44,7 +44,7 @@
         form.append("Name", this.formData.name);
         form.append("Description", this.formData.description);
         form.append("Category", this.formData.category);
-        await fetch("http://backend.localhost/Machine", {
+        await fetch("http://backend.ogversion.com/Machine", {
             method: "POST",
             headers: {
                 "accept": "text/plain",

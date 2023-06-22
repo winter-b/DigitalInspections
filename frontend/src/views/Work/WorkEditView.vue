@@ -60,7 +60,7 @@
         formData.append("description", this.work.description);
         formData.append("category", this.work.category);
         formData.append("isInspected", this.work.isInspected);
-        fetch(`http://backend.localhost/Machine/Work?workId=${this.$route.params.id}`, {
+        fetch(`http://backend.ogversion.com/Machine/Work?workId=${this.$route.params.id}`, {
         method: "PUT",
         headers: {
           "accept": "text/plain",
@@ -74,7 +74,7 @@
       async fetchWorkData() {
       try {
         const response = await fetch(
-        `http://backend.localhost/Machine/Work?workId=${this.$route.params.id}`,
+        `http://backend.ogversion.com/Machine/Work?workId=${this.$route.params.id}`,
         {
           method: "GET",
           headers: {
