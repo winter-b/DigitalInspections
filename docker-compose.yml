@@ -6,21 +6,13 @@ networks:
 
 services:
 
-  proxy:
-    build:
-      context: ./caddy
-      dockerfile: Dockerfile
-    container_name: caddy
-    ports:
-      - "6666:80"
-    networks:
-      - external
-
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: frontend
+    ports:
+      - "8666:8080"
     networks:
       - external
 
@@ -30,6 +22,8 @@ services:
       dockerfile: Dockerfile
     container_name: backend
     hostname: backend.localhost
+    ports:
+      - "8667:80"
     networks:
       - external
       - internal
