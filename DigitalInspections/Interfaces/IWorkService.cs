@@ -1,0 +1,3 @@
+﻿using DigitalInspectionsWebApi.Models; using DigitalInspectionsWebApi.Models.Requests;
+
+namespace DigitalInspectionsWebApi.Interfaces {     public interface IWorkService     {         Work CreateWork(WorkRequest workRequest, string addedBy);         void DeleteWork(Guid workId);         Work GetWork(Guid workId);         List<Work> GetWorks(Guid machineId, int limit, int offset);         Work UpdateWork(WorkRequest workRequest, Guid workId);     } } 

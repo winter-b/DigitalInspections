@@ -1,0 +1,11 @@
+{
+        auto_https disable_redirects
+}
+
+http://backend.localhost {
+        reverse_proxy backend:80
+}
+
+http://frontend.localhost {
+        reverse_proxy frontend:8080
+}

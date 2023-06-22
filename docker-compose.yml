@@ -1,0 +1,51 @@
+version: "3.3"
+
+networks:
+  internal:
+  external:
+
+services:
+
+  proxy:
+    build:
+      context: ./caddy
+      dockerfile: Dockerfile
+    container_name: caddy
+    ports:
+      - "80:80"
+    networks:
+      - external
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    networks:
+      - external
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    hostname: backend.localhost
+    networks:
+      - external
+      - internal
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: ./Database
+      dockerfile: Dockerfile      
+    container_name: database
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=DigitalInspections
+    ports:
+      - "5432:5432"
+    networks:
+      - internal
